@@ -1,8 +1,0 @@
-# 1. Cierra VS Code
-Stop-Process -Name "Code" -Force -ErrorAction SilentlyContinue
-
-# 2. Borra la carpeta de Service Workers (Copia y pega la línea completa)
-Remove-Item -Path "$env:AppData\Code\Service Worker" -Recurse -Force -ErrorAction SilentlyContinue
-
-# 3. Borra la caché de la GPU
-Remove-Item -Path "$env:AppData\Code\GPUCache" -Recurse -Force -ErrorAction SilentlyContinue
