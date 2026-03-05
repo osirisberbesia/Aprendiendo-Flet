@@ -1,0 +1,18 @@
+# Inicializar la carpeta como repositorio de Git
+git init
+
+# Agregar todos tus archivos (excepto el entorno virtual)
+git add .
+
+# Crear el primer "punto de guardado"
+git commit -m "Primer commit: Mi proyecto Flet"
+
+# Crear la rama principal
+git branch -M main
+
+# Vincular tu PC con tu cuenta de GitHub 
+# (Sustituye 'TuUsuario' por tu nombre real de GitHub)
+git remote add origin https://github.com/TuUsuario/Aprendiendo-Flet.git
+
+# Subir los archivos
+git push -u origin main
