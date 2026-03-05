@@ -3,11 +3,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-
-*.txt
-*.md
-!README.md
-*.ipynb
 *.so
 
 # Distribution / packaging
@@ -165,3 +160,8 @@ cython_debug/
 
 # Flet
 storage/
+
+*.txt
+*.md
+*.ipynb
+!README.md
