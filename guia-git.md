@@ -26,8 +26,34 @@ PowerShell
 git add .
 git commit -m "Reparado índice corrupto y aplicando limpieza de archivos ignorados"
 4. Sube a GitHub
-PowerShell
+
 git push origin main
+
+rm .git/index
+git reset
+git add .
+git push origin main
+
+
+# Problemas con .gitignore
+
+1. Limpiar el historial de rastreo
+Este comando le dice a Git: "Olvida todo lo que conoces del proyecto, pero no borres nada de mi disco duro".
+
+PowerShell
+git rm -rf --cached .
+2. Re-indexar con las nuevas reglas
+Ahora Git volverá a leer tu carpeta, pero esta vez sí obedecerá al .gitignore que acabas de configurar.
+
+PowerShell
+git add .
+3. Confirmar y Subir
+PowerShell
+git commit -m "Limpieza: Aplicando .gitignore para eliminar .txt, .md y .ipynb de GitHub"
+git push origin main
+
+
+# Otros
 
 
 ## 🐍 Gestión de Entornos Virtuales (Python)
