@@ -1,25 +1,26 @@
 import flet as ft
 
-
 def main(page: ft.Page):
-    counter = ft.Text("0", size=50, data=0)
+    page.title = "Flet counter example"
+    page.vertical_alignment = ft.MainAxisAlignment.CENTER
 
-    def increment_click(e):
-        counter.data += 1
-        counter.value = str(counter.data)
+    input = ft.TextField(value="0", text_align=ft.TextAlign.RIGHT, width=100)
 
-    page.floating_action_button = ft.FloatingActionButton(
-        icon=ft.Icons.ADD, on_click=increment_click
-    )
+    def minus_click(e):
+        input.value = str(int(input.value) - 1)
+
+    def plus_click(e):
+        input.value = str(int(input.value) + 1)
+
     page.add(
-        ft.SafeArea(
-            expand=True,
-            content=ft.Container(
-                content=counter,
-                alignment=ft.Alignment.CENTER,
-            ),
+        ft.Row(
+            alignment=ft.MainAxisAlignment.CENTER,
+            controls=[
+                ft.IconButton(ft.Icons.REMOVE, on_click=minus_click),
+                input,
+                ft.IconButton(ft.Icons.ADD, on_click=plus_click),
+            ],
         )
     )
-
 
 ft.run(main)
