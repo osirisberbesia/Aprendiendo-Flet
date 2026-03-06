@@ -1,6 +1,34 @@
 # 📘 Glosario de Comandos Git y Entornos
+git branch -m master main
+cuando me salga master, la renombro
 
-Guía rápida de comandos esenciales para la gestión de proyectos, resolución de conflictos de versiones y sincronización con GitHub.
+# Error faltal
+
+Gemini ha dicho
+El error fatal: index file corrupt significa que el archivo interno donde Git guarda el "mapa" de tus archivos se dañó (probablemente por un cierre inesperado o un problema de escritura).
+
+No te preocupes, tu código está a salvo, solo tenemos que reconstruir ese "mapa" (el índice). Sigue estos pasos exactos:
+
+1. Borra el archivo de índice dañado
+En Windows, el archivo se llama index y está oculto dentro de la carpeta .git. Ejecuta este comando para borrarlo:
+
+PowerShell
+rm .git/index
+2. Reconstruye el índice
+Ahora que el archivo dañado no está, vamos a pedirle a Git que cree uno nuevo escaneando tu carpeta otra vez. Esto también aplicará las reglas de tu .gitignore:
+
+PowerShell
+git reset
+3. Aplica la limpieza definitiva
+Ahora que el índice está sano, repitamos el proceso para limpiar los .txt, .md e .ipynb de GitHub:
+
+PowerShell
+git add .
+git commit -m "Reparado índice corrupto y aplicando limpieza de archivos ignorados"
+4. Sube a GitHub
+PowerShell
+git push origin main
+
 
 ## 🐍 Gestión de Entornos Virtuales (Python)
 *Aislar las librerías para evitar conflictos entre proyectos (como Flet vs Open-WebUI).*
