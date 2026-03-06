@@ -5,7 +5,7 @@ __pycache__/
 /Documentacion Flet
 
 *.so
-
+calc.py
 # Distribution / packaging
 .Python
 build/

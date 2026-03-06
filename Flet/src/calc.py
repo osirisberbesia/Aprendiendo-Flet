@@ -4,6 +4,12 @@ import flet as ft
 @ft.control
 class CalcButton(ft.Button):
     expand: int = field(default_factory=lambda: 1)
+    style: ft.ButtonStyle = field(
+        default_factory=lambda: ft.ButtonStyle(
+            shape=ft.RoundedRectangleBorder(radius=18),
+            padding=ft.padding.all(0) # Padding en 0 para que el texto mande sobre el centro
+        )
+    )
 
 @ft.control
 class DigitButton(CalcButton):
@@ -12,80 +18,156 @@ class DigitButton(CalcButton):
 
 @ft.control
 class ActionButton(CalcButton):
-    bgcolor: ft.Colors = ft.Colors.ORANGE
+    bgcolor: ft.Colors = ft.Colors.BLUE_ACCENT
     color: ft.Colors = ft.Colors.WHITE
 
 @ft.control
 class ExtraActionButton(CalcButton):
-    bgcolor: ft.Colors = ft.Colors.BLUE_GREY_100
+    bgcolor: ft.Colors = ft.Colors.BLUE_GREY
     color: ft.Colors = ft.Colors.BLACK
 
 @ft.control
 class CalculatorApp(ft.Container):
     def init(self):
         self.expression = ""
-        self.width = 350
-        self.bgcolor = ft.Colors.BLACK
-        self.border_radius = ft.BorderRadius.all(20)
-        self.padding = 20
+        
+        self.expand = True 
+        self.margin = ft.margin.only(left=3, top=25, right=3, bottom=25)
+        self.bgcolor = ft.Colors.BLUE_GREY_800
+        self.border_radius = ft.BorderRadius.all(25)
+        self.padding = 15
         
         self.formula = ft.Text(value="", color=ft.Colors.WHITE60, size=14)
         self.result = ft.Text(value="0", color=ft.Colors.WHITE, size=35)
-        self.preview = ft.Text(value="", color=ft.Colors.GREY_500, size=18)
+        self.preview = ft.Text(value="", color=ft.Colors.GREY_500, size=25)
 
-        self.content = ft.Column(
+        self.pad_column = ft.Column(
+            expand=True,
+            spacing=10, 
             controls=[
-                ft.Column(
-                    controls=[self.formula, self.result, self.preview],
-                    alignment=ft.MainAxisAlignment.END,
-                    horizontal_alignment=ft.CrossAxisAlignment.END,
-                ),
                 ft.Row(
+                    expand=True, 
+                    spacing=10,  
+                    vertical_alignment=ft.CrossAxisAlignment.STRETCH, 
                     controls=[
-                        ExtraActionButton(content="AC", on_click=self.button_clicked),
-                        ExtraActionButton(content="+/-", on_click=self.button_clicked),
-                        ExtraActionButton(content="%", on_click=self.button_clicked),
-                        ActionButton(content="/", on_click=self.button_clicked),
+                        ExtraActionButton(content=ft.Text("AC", no_wrap=True, text_align=ft.TextAlign.CENTER), on_click=self.button_clicked),
+                        ExtraActionButton(content=ft.Text("+/-", no_wrap=True, text_align=ft.TextAlign.CENTER), on_click=self.button_clicked),
+                        ExtraActionButton(content=ft.Text("%", no_wrap=True, text_align=ft.TextAlign.CENTER), on_click=self.button_clicked),
+                        ActionButton(content=ft.Text("/", no_wrap=True, text_align=ft.TextAlign.CENTER), on_click=self.button_clicked),
                     ]
                 ),
                 ft.Row(
+                    expand=True,
+                    spacing=10,
+                    vertical_alignment=ft.CrossAxisAlignment.STRETCH,
                     controls=[
-                        DigitButton(content="7", on_click=self.button_clicked),
-                        DigitButton(content="8", on_click=self.button_clicked),
-                        DigitButton(content="9", on_click=self.button_clicked),
-                        ActionButton(content="*", on_click=self.button_clicked),
+                        DigitButton(content=ft.Text("7", no_wrap=True, text_align=ft.TextAlign.CENTER), on_click=self.button_clicked),
+                        DigitButton(content=ft.Text("8", no_wrap=True, text_align=ft.TextAlign.CENTER), on_click=self.button_clicked),
+                        DigitButton(content=ft.Text("9", no_wrap=True, text_align=ft.TextAlign.CENTER), on_click=self.button_clicked),
+                        ActionButton(content=ft.Text("*", no_wrap=True, text_align=ft.TextAlign.CENTER), on_click=self.button_clicked),
                     ]
                 ),
                 ft.Row(
+                    expand=True,
+                    spacing=10,
+                    vertical_alignment=ft.CrossAxisAlignment.STRETCH,
                     controls=[
-                        DigitButton(content="4", on_click=self.button_clicked),
-                        DigitButton(content="5", on_click=self.button_clicked),
-                        DigitButton(content="6", on_click=self.button_clicked),
-                        ActionButton(content="-", on_click=self.button_clicked),
+                        DigitButton(content=ft.Text("4", no_wrap=True, text_align=ft.TextAlign.CENTER), on_click=self.button_clicked),
+                        DigitButton(content=ft.Text("5", no_wrap=True, text_align=ft.TextAlign.CENTER), on_click=self.button_clicked),
+                        DigitButton(content=ft.Text("6", no_wrap=True, text_align=ft.TextAlign.CENTER), on_click=self.button_clicked),
+                        ActionButton(content=ft.Text("-", no_wrap=True, text_align=ft.TextAlign.CENTER), on_click=self.button_clicked),
                     ]
                 ),
                 ft.Row(
+                    expand=True,
+                    spacing=10,
+                    vertical_alignment=ft.CrossAxisAlignment.STRETCH,
                     controls=[
-                        DigitButton(content="1", on_click=self.button_clicked),
-                        DigitButton(content="2", on_click=self.button_clicked),
-                        DigitButton(content="3", on_click=self.button_clicked),
-                        ActionButton(content="+", on_click=self.button_clicked),
+                        DigitButton(content=ft.Text("1", no_wrap=True, text_align=ft.TextAlign.CENTER), on_click=self.button_clicked),
+                        DigitButton(content=ft.Text("2", no_wrap=True, text_align=ft.TextAlign.CENTER), on_click=self.button_clicked),
+                        DigitButton(content=ft.Text("3", no_wrap=True, text_align=ft.TextAlign.CENTER), on_click=self.button_clicked),
+                        ActionButton(content=ft.Text("+", no_wrap=True, text_align=ft.TextAlign.CENTER), on_click=self.button_clicked),
                     ]
                 ),
                 ft.Row(
+                    expand=True,
+                    spacing=10,
+                    vertical_alignment=ft.CrossAxisAlignment.STRETCH,
                     controls=[
-                        DigitButton(
-                            content="0", expand=2, on_click=self.button_clicked
-                        ),
-                        DigitButton(content=".", on_click=self.button_clicked),
-                        ActionButton(content="=", on_click=self.button_clicked),
+                        DigitButton(content=ft.Text("0", no_wrap=True, text_align=ft.TextAlign.CENTER), expand=2, on_click=self.button_clicked),
+                        DigitButton(content=ft.Text(".", no_wrap=True, text_align=ft.TextAlign.CENTER), on_click=self.button_clicked),
+                        ActionButton(content=ft.Text("=", no_wrap=True, text_align=ft.TextAlign.CENTER), on_click=self.button_clicked),
                     ]
                 ),
             ]
         )
 
+        self.content = ft.Column(
+            expand=True,
+            controls=[
+                ft.Container(
+                    expand=15,
+                    content=ft.Column(
+                        controls=[self.formula, self.preview],
+                        alignment=ft.MainAxisAlignment.END,
+                        horizontal_alignment=ft.CrossAxisAlignment.END,
+                    ),
+                    alignment=ft.Alignment(1.0, 1.0), 
+                ),
+                ft.Container(
+                    expand=20,
+                    content=self.result,
+                    alignment=ft.Alignment(1.0, 1.0), 
+                ),
+                ft.Container(
+                    expand=65,
+                    content=self.pad_column
+                )
+            ]
+        )
+
+    def did_mount(self):
+        self.page.on_resize = self.handle_resize
+        self.handle_resize(None)
+
+    def handle_resize(self, e):
+        width = self.page.width
+        height = self.page.height
+        
+        # MATEMÁTICA DE PROPORCIÓN EXACTA PARA LA ALTURA DEL BOTÓN
+        # 1. Calculamos el espacio vertical real restando margin (5x2) y padding (15x2)
+        usable_height = height - 40 
+        
+        # 2. El teclado ocupa el 65% de ese espacio
+        keypad_height = usable_height * 0.65 
+        
+        # 3. Restamos los 4 espacios de 10px entre las 5 filas (40px) y dividimos entre 5
+        button_height = (keypad_height - 40) / 5 
+        
+        # 4. El tamaño de la fuente es estrictamente el 70% de esa altura (minimo 8px por seguridad)
+        btn_size = max(8, int(button_height * 0.50))
+
+        # Tamaño del resultado principal basado en el ancho
+        if width < 350:
+            result_size = 28
+        elif width <= 500:
+            result_size = 35
+        elif width <= 800:
+            result_size = 45
+        else:
+            result_size = 55
+
+        self.result.size = result_size
+
+        for row in self.pad_column.controls:
+            for btn in row.controls:
+                btn.content.size = btn_size
+                btn.update()
+        
+        self.result.update()
+
     def button_clicked(self, e):
-        data = e.control.content
+        data = e.control.content.value
         
         if data == "AC":
             self.expression = ""
@@ -94,7 +176,6 @@ class CalculatorApp(ft.Container):
             self.preview.value = ""
 
         elif data in ("1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "."):
-            # Evitar ceros a la izquierda
             if self.expression == "" or self.expression == "0":
                 if data == ".":
                     self.expression = "0."
@@ -109,7 +190,6 @@ class CalculatorApp(ft.Container):
         elif data in ("+", "-", "*", "/"):
             if self.expression == "":
                 self.expression = "0" + data
-            # Si el último carácter ya es un operador, lo reemplazamos
             elif self.expression[-1] in ("+", "-", "*", "/"):
                 self.expression = self.expression[:-1] + data
             else:
@@ -154,7 +234,6 @@ class CalculatorApp(ft.Container):
 
     def update_preview(self):
         try:
-            # Solo evalúa si hay operadores en la cadena y no termina en uno
             if any(op in self.expression for op in ("+", "-", "*", "/")) and self.expression[-1] not in ("+", "-", "*", "/"):
                 res = eval(self.expression)
                 self.preview.value = f"= {self.format_number(res)}"
@@ -174,8 +253,7 @@ class CalculatorApp(ft.Container):
 
 def main(page: ft.Page):
     page.title = "Calc App"
-    page.vertical_alignment = ft.MainAxisAlignment.CENTER
-    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
+    page.padding = 0 
     
     calc = CalculatorApp()
     page.add(calc)
