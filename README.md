@@ -22,6 +22,11 @@ Desarrollar una aplicación móvil y web de conversión de divisas, pero enfocad
         * Doble punto 3..2 no permitido
     * APK Generado
     * Release v1.0.0 Publicado
+    * Cambio de Ico
+    * Refrescamiento de respuesta táctil
+    * Empaquetado independiente de APK por arquitectura 
+    ![alt text]({EB60CB56-C269-4711-83CC-D9418F1A7DC8}.png)
+
 
 ### Siguientes pasos:
 - Manejo de entradas de usuario (TextFields) para montos.
