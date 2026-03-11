@@ -13,7 +13,15 @@ Desarrollar una aplicación móvil y web de conversión de divisas, pero enfocad
 - **Interfaz Limpia:** Diseño minimalista centrado en la utilidad para cálculos rápidos.
 
 ## 📖 Ruta de Aprendizaje
-Actualmente explorando la [documentación oficial de Flet](https://docs.flet.dev/)
+- Actualmente explorando la [documentación oficial de Flet](https://docs.flet.dev/)
+    Avances:
+    * Creación de Calculadora en Flet con Personalización
+        Bugs resueltos:
+        * Se elimina limitación de 4 decimales en los resultados
+        * Evita operaciones con cero a la izquierda Ej. 12/03 pasa a 12/3
+        * Doble punto 3..2 no permitido
+    * APK Generado
+    * Release v1.0.0 Publicado
 
 ### Siguientes pasos:
 - Manejo de entradas de usuario (TextFields) para montos.
