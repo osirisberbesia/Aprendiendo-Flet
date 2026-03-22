@@ -32,13 +32,13 @@ Desarrollar una aplicación móvil y web de conversión de divisas, pero enfocad
     * Cambio de Ico
     * Refrescamiento de respuesta táctil
     * Empaquetado independiente de APK por arquitectura 
-![alt text](img/image-3.png)
+![alt text](/Flet/img/image-3.png)
 
 #### Comportamiento Responsivo
 
-![alt text](img/image.png)
-![alt text](img/image-1.png)
-![alt text](img/image-2.png)
+![alt text](/Flet/img/image.png)
+![alt text](/Flet/img/image-1.png)
+![alt text](/Flet/img/image-2.png)
 
 
 
