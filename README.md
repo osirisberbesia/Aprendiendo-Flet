@@ -18,20 +18,20 @@ Desarrollar una aplicación móvil y web de conversión de divisas, pero enfocad
 
 - Actualmente explorando la [documentación oficial de Flet](https://docs.flet.dev/)
 
-    Avances:
-    * Creación de Calculadora en Flet con Personalización
-        Bugs resueltos:
-        * Se elimina limitación de 4 decimales en los resultados
-        * Evita operaciones con cero a la izquierda Ej. 12/03 pasa a 12/3
-        * Doble punto 3..2 no permitido
-    * APK Generado
-    * Release v1.0.0 Publicado
+Avances:
+* Creación de Calculadora en Flet con Personalización
+    Bugs resueltos:
+    * Se elimina limitación de 4 decimales en los resultados
+    * Evita operaciones con cero a la izquierda Ej. 12/03 pasa a 12/3
+    * Doble punto 3..2 no permitido
+* APK Generado
+* Release v1.0.0 Publicado
 
 ### Vs 1.1 (Publicada)
 
-    * Cambio de Ico
-    * Refrescamiento de respuesta táctil
-    * Empaquetado independiente de APK por arquitectura 
+* Cambio de Ico
+* Refrescamiento de respuesta táctil
+* Empaquetado independiente de APK por arquitectura 
 ![alt text](/Flet/img/image-3.png)
 
 #### Comportamiento Responsivo
@@ -42,20 +42,37 @@ Desarrollar una aplicación móvil y web de conversión de divisas, pero enfocad
 
 
 
-### Vs 1.2 (En curso)
+### Vs 1.2 (Publicada)
 
-    * Se puede interactuar con el panel de la calculadora 
-    * Agregado de botón Delete (Retroceso) para borrar números
+* Se puede interactuar con el panel de la calculadora 
+* Agregado de botón Delete (Retroceso) para borrar números
 
-#### En curso / Fix
+#### Vs 1.3 (Publicada)
 
-    * Al usar botón borrar en un símbolo, borra todos los símbolos dentro de la operación
-    * Agregar portapapeles al resultado
+* Al usar botón borrar en un símbolo, borra todos los símbolos dentro de la operación
+* Agregar portapapeles al resultado
+* Permitir calcular operaciones con números negativos (multiplicación y división)
+* Maquetado de interfaz completo.
+* Actualización dinámica de etiquetas (Text) para resultados. (Se observa con los resultados sin haber dado = )
+* Diseño para que la app funcione en móviles. Totalmente responsiva en dispositivos y arquitecturas conocidas.
 
 
-### Siguientes pasos:
+## Conclusiones:
+
+En paralelo, se hacia exactamente lo mismo con Flutter.
+Lo establecido como próximos pasos, se hará con FLutter, es muchísimo más fluido, rápido, y predecible.
+Los tiempos de respuestas de la UI son infinitamente inmediatos en comparación con Flet.
+
+Por lo cual:
+
 - Manejo de entradas de usuario (TextFields) para montos.
 - Conexión con API o Web Scrapping para obtener las tasas de cambio.
-- Maquetado de interfaz.
-- Actualización dinámica de etiquetas (Text) para resultados.
-- Diseño para que la app funcione en móviles.
+
+Será manejado, desarrollado e implementado a través de Dart.
+
+Y con esto:
+
+![alt text](image.png)
+
+Se cierra el telón.
+
