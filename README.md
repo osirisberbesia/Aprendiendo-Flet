@@ -12,7 +12,9 @@ Desarrollar una aplicación móvil y web de conversión de divisas, pero enfocad
 - **Cálculo en Tiempo Real:** Implementación de funciones para conversiones instantáneas entre divisas.
 - **Interfaz Limpia:** Diseño minimalista centrado en la utilidad para cálculos rápidos.
 
-## 📖 Ruta de Aprendizaje
+## 📖 Ruta
+
+### Vs 1.0.0 (Publicada)
 - Actualmente explorando la [documentación oficial de Flet](https://docs.flet.dev/)
     Avances:
     * Creación de Calculadora en Flet con Personalización
@@ -22,10 +24,19 @@ Desarrollar una aplicación móvil y web de conversión de divisas, pero enfocad
         * Doble punto 3..2 no permitido
     * APK Generado
     * Release v1.0.0 Publicado
+
+### Vs 1.1 (Publicada)
     * Cambio de Ico
     * Refrescamiento de respuesta táctil
     * Empaquetado independiente de APK por arquitectura 
     ![alt text]({EB60CB56-C269-4711-83CC-D9418F1A7DC8}.png)
+
+### Vs 1.2 (En curso)
+    * Se puede interactuar con el panel de la calculadora 
+    * Agregado de botón Delete (Retroceso) para borrar números
+#### En curso / Fix
+    * Al usar botón borrar en un símbolo, borra todos los símbolos dentro de la operación
+    * Agregar portapapeles al resultado
 
 
 ### Siguientes pasos:
